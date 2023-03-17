@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/calculator
-Environment="PATH=/home/ubuntu/calculator/venv/bin"
-ExecStart=/home/ubuntu/calculator/venv/bin/gunicorn --workers 2 --bind unix:calculator.sock -m 007 wsgi:app
+WorkingDirectory=/home/ubuntu/gafar
+Environment="PATH=/home/ubuntu/gafar/medina/bin"
+ExecStart=/home/ubuntu/gafar/medina/bin/gunicorn --bind 0.0.0.0:5000 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
